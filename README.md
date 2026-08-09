@@ -109,4 +109,69 @@ Then, convert that String back into an integer using `Integer.parseInt(s)`.
 * Remember these two methods:
   * **toString = number → String**
   * **parseInt = String → number**
-
+## 12. Java Date and Time
+### Method 1 – Manual Calculation
+1. Logic Explanation
+This method calculates the total number of days from the beginning of the calendar up to the given date.
+The logic is:
+Days in previous years
+        +
+Days in previous months
+        +
+Days in current month
+        =
+Total days
+Step 1 – Check leap year
+A year is a leap year if:
+divisible by 4
+AND not divisible by 100
+OR
+divisible by 400
+Step 2 – Count previous years
+Loop from 1 to year - 1.
+Normal year → add 365
+Leap year → add 366
+Important:
+isleap(i) not isleap(year), because we are checking each previous year.
+Step 3 – Count previous months
+Store the number of days in each month:
+31 28 31 30 31 30 31 31 30 31 30 31
+If the current year is a leap year, February becomes 29.
+Then add the days of all months before the given month.
+Step 4 – Add the current day
+Add the given day.
+Finally, use % 7 to map the total into the 7 days of the week.
+## Method 2 – Java Built-in Calendar
+Java already provides a Calendar class that can calculate the day of the week.
+We give the date to Calendar:
+year
+month - 1
+day
+Then:
+Calendar.DAY_OF_WEEK
+gives the day number.
+Why month - 1?
+This is an important Java trick.
+Calendar represents months using:
+January   → 0
+February  → 1
+March     → 2
+...
+December  → 11
+## Method 3 – Formula / Zeller's Congruence
+The formula is:
+h = (q + floor(13(m + 1) / 5) + K
+     + floor(K / 4) + floor(J / 4) + 5J) % 7
+Where:
+q = day
+m = month
+K = year % 100
+J = year / 100
+For Zeller's formula:
+March     → 3
+April     → 4
+...
+December → 12
+January   → 13
+February  → 14
+January and February are treated as months of the previous year.
