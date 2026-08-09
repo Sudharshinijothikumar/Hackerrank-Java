@@ -175,3 +175,13 @@ December → 12
 January   → 13
 February  → 14
 January and February are treated as months of the previous year.
+## 13.Java Currency Formatter
+### 1. Logic Explanation
+The program takes a decimal payment amount and formats it as currency for US, India, China, and France.
+It uses Java's NumberFormat class along with Locale to automatically apply the correct currency symbol and number formatting for each country.
+Locale.US, Locale.CHINA , Locale.FRANCE
+new Locale("en", "IN") → Indian currency format
+### 2. Important Notes / Tricks
+NumberFormat.getCurrencyInstance(locale) → formats a number as currency.
+format(payment) converts the number into the required currency representation.
+NumberFormat + Locale = Country-specific currency formatting
