@@ -1,0 +1,18 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner s=new Scanner(System.in);
+        int l=0;
+        while(s.hasNext()){
+            l++;
+            String str=s.nextLine();
+            System.out.println(l+" "+str);
+        }
+    }
+}
