@@ -100,3 +100,13 @@ Print two messages:
 `Hello, Java.`
 ### 2. Important Notes / Tricks
 * Every Java program starts execution from `main()`.
+## 11. Java Int to String
+### 1. Logic Explanation
+The problem asks us to convert an `int` value into a `String`.
+First, convert the integer into a String using `Integer.toString(n)`.
+Then, convert that String back into an integer using `Integer.parseInt(s)`.
+### 2. Important Notes / Tricks
+* Remember these two methods:
+  * **toString = number → String**
+  * **parseInt = String → number**
+
